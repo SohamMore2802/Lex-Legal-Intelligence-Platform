@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}LexGraph AI | Home{% endblock %}
+
+{% block content %}
+<section class="hero-panel hero-home">
+  <div class="hero-copy">
+    <p class="eyebrow">Welcome to Lex AI</p>
+    <h2>Upload, analyze, and query legal PDFs with confidence.</h2>
+    <p>LexGraph AI turns dense documents into usable answers, page references, and confidence-building insights.</p>
+    <div class="hero-actions">
+      <a href="/app" class="button button-primary">Launch the app</a>
+      <a href="/faq" class="button button-secondary">View FAQs</a>
+    </div>
+  </div>
+  <div class="hero-aside card">
+    <h3>Get started in three steps</h3>
+    <ol class="step-list">
+      <li>Upload your legal PDF.</li>
+      <li>Review the summary and keywords.</li>
+      <li>Ask a question and see supporting excerpts.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="feature-grid">
+  <article class="feature-card card">
+    <h3>Instant document status</h3>
+    <p>Know how many pages and chunks are ready for query at a glance.</p>
+  </article>
+  <article class="feature-card card">
+    <h3>Answer with sources</h3>
+    <p>Support every response with the exact page excerpt from your PDF.</p>
+  </article>
+  <article class="feature-card card">
+    <h3>Reliable workflow</h3>
+    <p>Clean design and helpful prompts make legal research easier to start and easier to trust.</p>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}App | Lex AI{% endblock %}
+
+{% block content %}
+<section class="hero-panel">
+  <div class="hero-copy">
+    <p class="eyebrow">Document assistant</p>
+    <h2>Upload a legal PDF and explore it with a smart assistant.</h2>
+    <p>Ask questions, review citations, and get document insights in a clean, easy workflow.</p>
+  </div>
+  <div class="hero-actions">
+    <form id="upload-form" class="card form-card">
+      <h3>Upload a legal PDF</h3>
+      <span id="selected-file" class="selected-file">Choose a PDF to begin.</span>
+      <label class="file-input-label">
+        <input type="file" name="document" accept="application/pdf" required />
+        Select file
+      </label>
+      <button type="submit" class="button button-primary">Upload document</button>
+      <div id="upload-status" class="status-text"></div>
+    </form>
+    <div class="info-card card">
+      <h3>Quick start</h3>
+      <p>Supported documents: digital PDF only. Once uploaded, ask a question and see the supporting page excerpts.</p>
+      <div class="info-metrics">
+        <strong>Tip:</strong> Try questions like “What relief is sought?” or “Which sections are referenced?”.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grid-panel">
+  <article class="card metrics-card">
+    <h3>Document status</h3>
+    <ul class="document-stats">
+      <li><span>File:</span> <strong id="document-name">No document uploaded</strong></li>
+      <li><span>Pages:</span> <strong id="page-count">0</strong></li>
+      <li><span>Chunks:</span> <strong id="chunk-count">0</strong></li>
+    </ul>
+  </article>
+
+  <article class="card query-card">
+    <h3>Ask a question</h3>
+    <form id="query-form">
+      <textarea id="question" rows="4" placeholder="Ask something about the uploaded PDF..." required></textarea>
+      <button type="submit" class="button button-secondary">Generate answer</button>
+    </form>
+    <div id="query-suggestions" class="query-suggestions">
+      <button type="button" class="suggestion-pill">What relief is sought?</button>
+      <button type="button" class="suggestion-pill">Which sections are referenced?</button>
+      <button type="button" class="suggestion-pill">What is the case outcome?</button>
+    </div>
+    <div id="query-status" class="status-text"></div>
+    <button id="reset-button" class="button button-secondary button-block" type="button">Reset document</button>
+  </article>
+</section>
+
+<section class="activity-panel">
+  <article class="card history-card">
+    <h3>Recent uploads</h3>
+    <ul id="recent-uploads" class="history-list"><li>No uploads yet.</li></ul>
+  </article>
+  <article class="card history-card">
+    <h3>Recent questions</h3>
+    <ul id="recent-queries" class="history-list"><li>Ask your first question.</li></ul>
+  </article>
+</section>
+
+<section class="analysis-panel">
+  <article class="card summary-card">
+    <h3>Document Summary</h3>
+    <div id="document-summary" class="summary-text">Summary will appear after upload.</div>
+  </article>
+  <article class="card keywords-card">
+    <h3>Top keywords</h3>
+    <ul id="keyword-list" class="keyword-list"><li>No keywords yet.</li></ul>
+  </article>
+</section>
+
+<section class="analysis-details-panel">
+  <article class="card preview-card">
+    <h3>Page preview</h3>
+    <p id="page-preview" class="summary-text">Preview will appear after upload.</p>
+  </article>
+  <article class="card metric-card">
+    <h3>Document metrics</h3>
+    <ul class="metric-list">
+      <li><span>Readability</span> <strong id="readability-score">—</strong></li>
+      <li><span>Word count</span> <strong id="word-count">—</strong></li>
+      <li><span>Avg chunk length</span> <strong id="avg-chunk-length">—</strong></li>
+    </ul>
+  </article>
+  <article class="card key-items-card">
+    <h3>Key sections</h3>
+    <div id="key-sections" class="chip-list">No sections found.</div>
+  </article>
+  <article class="card phrase-card">
+    <h3>Top phrases</h3>
+    <div id="top-phrases" class="chip-list">No phrases found.</div>
+  </article>
+</section>
+
+<section class="visuals-panel">
+  <article class="card chart-card">
+    <h3>Document overview</h3>
+    <canvas id="document-chart" width="600" height="220"></canvas>
+  </article>
+  <article class="card chart-card">
+    <h3>Top retrieval scores</h3>
+    <canvas id="score-chart" width="600" height="220"></canvas>
+  </article>
+</section>
+
+<section class="results-panel card" id="results-panel">
+  <div class="results-header">
+    <h3>Answer</h3>
+    <button id="copy-answer" class="button button-secondary">Copy answer</button>
+  </div>
+  <div id="answer-output" class="answer-output">Upload a document to get started.</div>
+  <ul id="citation-list" class="citation-list"></ul>
+</section>
+
+<script src="/static/js/app.js"></script>
+{% endblock %}

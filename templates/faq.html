@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ | LexGraph AI{% endblock %}
+
+{% block content %}
+<section class="content-panel card">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <article class="faq-item card">
+      <h3>What file types are supported?</h3>
+      <p>Currently, Lex AI supports digital PDF files only. Scanned images are not yet supported.</p>
+    </article>
+    <article class="faq-item card">
+      <h3>How does answering work?</h3>
+      <p>The app extracts text from the PDF, breaks it into chunks, and finds the best matching passages for your query.</p>
+    </article>
+    <article class="faq-item card">
+      <h3>Is my document stored?</h3>
+      <p>Uploaded files are saved locally to the `data/uploads` folder for processing. The app does not push your document to any external service.</p>
+    </article>
+  </div>
+</section>
+{% endblock %}

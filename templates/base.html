@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Lex AI{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" role="banner">
+        <div class="brand">
+          <span class="brand-mark">LEX</span>
+          <div>
+            <p class="eyebrow">Legal AI Studio</p>
+            <h1>Lex AI</h1>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/app">App</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="button button-secondary button-small" aria-label="Toggle theme">Light mode</button>
+        </div>
+      </header>
+
+      <main>{% block content %}{% endblock %}</main>
+
+      <footer class="site-footer">
+        <p>Designed for elegant legal document discovery and responsive research.</p>
+        <div class="footer-links">
+          <a href="/app">App</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+    <!-- Chart.js for client-side charts and Socket.IO client for realtime updates -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+</html>
