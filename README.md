@@ -24,6 +24,7 @@ This project combines cutting-edge AI/ML libraries with a modern full-stack web 
   - **TensorFlow** — Alternative/complementary deep learning framework for production-scale inference and training.
   - **LangChain** — Framework for building LLM-powered applications; manages prompts, chains, memory, and retrieval-augmented generation (RAG).
   - **LangGraph** — Orchestrates multi-agent workflows and complex reasoning pipelines.
+  - **OpenCV** - Preprocess scanned document images through grayscale conversion, noise removal, and thresholding to improve OCR text extraction accuracy
 
 - **Backend Web Frameworks:**
   - **Flask** — Lightweight Python web framework for API routes, middleware, and rapid prototyping.
